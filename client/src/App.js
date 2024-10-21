@@ -13,15 +13,16 @@ function App() {
     ]
   );
 
-  const appendContact = () => {
+  const appendContact = (fullName, phoneNum, note) => {
+    const countId = data.length + 1;
     const temp = {
-      num: 1,
-      fullName: "name1",
-      phoneNum: "+7 123 456 78 91",
-      note: "note1"
+      num: countId,
+      fullName: fullName,
+      phoneNum: phoneNum,
+      note: note
     };
     setData([...data, temp]) // new array
-    console.log(data.length);
+    // console.log(data.length);
   }
 
   return (

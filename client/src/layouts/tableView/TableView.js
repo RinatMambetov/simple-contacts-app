@@ -14,8 +14,8 @@ const TableView = (props) => {
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Phone</th>
+          <th scope="col">FullName</th>
+          <th scope="col">PhoneNum</th>
           <th scope="col">Note</th>
         </tr>
       </thead>
