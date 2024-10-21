@@ -1,4 +1,5 @@
 import './App.css';
+import FormNewItem from './layouts/formNewItem/FormNewItem';
 import TableView from './layouts/tableView/TableView';
 import React, { useState } from 'react';
 
@@ -19,7 +20,7 @@ function App() {
       phoneNum: "+7 123 456 78 91",
       note: "note1"
     };
-    setData([...data, temp])
+    setData([...data, temp]) // new array
     console.log(data.length);
   }
 
@@ -31,7 +32,7 @@ function App() {
         </div>
         <div className='card-body'>
           <TableView contacts={data} />
-          <button className='btn btn-primary' onClick={appendContact}>Add contact</button>
+          <FormNewItem appendContact={appendContact} />
         </div>
       </div>
     </div >
