@@ -15,7 +15,7 @@ const TableView = (props) => {
       <tbody>
         {
           props.contacts.map(item => (
-            <TableRowItem contact={item} />
+            <TableRowItem contact={item} key={item.num} />
           ))
         }
       </tbody>
