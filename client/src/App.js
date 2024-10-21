@@ -7,6 +7,12 @@ const data = [
   { num: 3, fullName: "name3", phoneNum: "+7 123 456 78 93", note: "note3" }
 ]
 
+const appendContact = () => {
+  const temp = { num: 1, fullName: "name1", phoneNum: "+7 123 456 78 91", note: "note1" };
+  data.push(temp);
+  console.log(data.length);
+}
+
 function App() {
   return (
     <div className='container mt-5'>
@@ -16,6 +22,7 @@ function App() {
         </div>
         <div className='card-body'>
           <TableView contacts={data} />
+          <button className='btn btn-primary' onClick={appendContact}>Add contact</button>
         </div>
       </div>
     </div >
