@@ -1,13 +1,6 @@
 import React from "react";
 import TableRowItem from "./components/TableRowItem";
 
-const max = 10000;
-const min = -10000;
-
-const getRandom = (max, min) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
 const TableView = (props) => {
   return (
     <table className="table table-hover">
@@ -24,7 +17,7 @@ const TableView = (props) => {
           <TableRowItem
             contact={item}
             removeContact={props.removeContact}
-            key={getRandom(max, min)}
+            key={item.id}
           />
         ))}
       </tbody>
