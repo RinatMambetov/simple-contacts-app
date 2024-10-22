@@ -9,6 +9,6 @@ const TableRowItem = (props) => {
       <td>{props.contact.note}</td>
     </tr>
   );
-}
+};
 
 export default TableRowItem;

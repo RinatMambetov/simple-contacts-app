@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 
-
 const FormNewItem = (props) => {
-
-  const [fullName, setFullName] = useState('')
-  const [phoneNum, setPhoneNum] = useState('')
-  const [note, setNote] = useState('')
+  const [fullName, setFullName] = useState("");
+  const [phoneNum, setPhoneNum] = useState("");
+  const [note, setNote] = useState("");
 
   const submit = () => {
-    if (fullName.trim() === '' || phoneNum.trim() === '') return;
+    if (fullName.trim() === "" || phoneNum.trim() === "") return;
     props.appendContact(fullName, phoneNum, note);
-    setFullName('');
-    setPhoneNum('');
-    setNote('');
-  }
+    setFullName("");
+    setPhoneNum("");
+    setNote("");
+  };
 
   return (
     <div>
@@ -24,7 +22,8 @@ const FormNewItem = (props) => {
             className="form-control"
             type="text"
             value={fullName}
-            onChange={e => setFullName(e.target.value)} />
+            onChange={(e) => setFullName(e.target.value)}
+          />
         </div>
         <div className="mt-3">
           <label className="form-label">Phone Number</label>
@@ -32,7 +31,8 @@ const FormNewItem = (props) => {
             className="form-control"
             type="text"
             value={phoneNum}
-            onChange={e => setPhoneNum(e.target.value)} />
+            onChange={(e) => setPhoneNum(e.target.value)}
+          />
         </div>
         <div className="mt-3">
           <label className="form-label">Note</label>
@@ -40,17 +40,23 @@ const FormNewItem = (props) => {
             className="form-control"
             rows="3"
             value={note}
-            onChange={e => setNote(e.target.value)} />
+            onChange={(e) => setNote(e.target.value)}
+          />
         </div>
         <div className="mt-3">
           <button
-            className='btn btn-primary'
+            className="btn btn-primary"
             type="button"
-            onClick={() => { submit() }}>Add contact</button>
+            onClick={() => {
+              submit();
+            }}
+          >
+            Add contact
+          </button>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default FormNewItem;
