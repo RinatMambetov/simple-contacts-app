@@ -7,22 +7,26 @@ import React, { useState } from 'react';
 function App() {
   const [data, setData] = useState(
     [
-      { num: 1, fullName: "name1", phoneNum: "+7 123 456 78 91", note: "note1" },
-      { num: 2, fullName: "name2", phoneNum: "+7 123 456 78 92", note: "note2" },
-      { num: 3, fullName: "name3", phoneNum: "+7 123 456 78 93", note: "note3" }
+      { id: 1, fullName: "name1", phoneNum: "+7 123 456 78 91", note: "note1" },
+      { id: 2, fullName: "name2", phoneNum: "+7 123 456 78 92", note: "note2" },
+      { id: 3, fullName: "name3", phoneNum: "+7 123 456 78 93", note: "note3" }
     ]
   );
 
   const appendContact = (fullName, phoneNum, note) => {
     const countId = data.length + 1;
     const temp = {
-      num: countId,
+      id: countId,
       fullName: fullName,
       phoneNum: phoneNum,
       note: note
     };
     setData([...data, temp]) // new array
     // console.log(data.length);
+  }
+
+  const removeContact = (id) => {
+    setData(data.filter(item => item.id !== id))
   }
 
   return (
@@ -32,7 +36,7 @@ function App() {
           <h1>List of contacts</h1>
         </div>
         <div className='card-body'>
-          <TableView contacts={data} />
+          <TableView contacts={data} removeContact={removeContact} />
           <FormNewItem appendContact={appendContact} />
         </div>
       </div>

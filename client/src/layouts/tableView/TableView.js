@@ -22,7 +22,9 @@ const TableView = (props) => {
       <tbody>
         {
           props.contacts.map(item => (
-            <TableRowItem contact={item} key={getRandom(max, min)} />
+            <TableRowItem contact={item}
+              removeContact={props.removeContact}
+              key={getRandom(max, min)} />
           ))
         }
       </tbody>
