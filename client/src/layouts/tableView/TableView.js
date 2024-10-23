@@ -44,6 +44,7 @@ const TableView = ({ contacts, removeContact }) => {
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}
         onConfirm={handleDelete}
+        contact={contactToDelete}
       />
     </>
   );

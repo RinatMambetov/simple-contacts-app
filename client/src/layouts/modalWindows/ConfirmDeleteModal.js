@@ -1,6 +1,6 @@
 import React from "react";
 
-const ConfirmDeleteModal = ({ isOpen, onClose, onConfirm }) => {
+const ConfirmDeleteModal = ({ isOpen, onClose, onConfirm, contact }) => {
   if (!isOpen) return null;
 
   return (
@@ -14,9 +14,6 @@ const ConfirmDeleteModal = ({ isOpen, onClose, onConfirm }) => {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Confirm Delete</h5>
-            {/* <button type="button" className="close" onClick={onClose}>
-              <span>&times;</span>
-            </button> */}
             <button
               type="button"
               className="btn-close"
@@ -24,7 +21,7 @@ const ConfirmDeleteModal = ({ isOpen, onClose, onConfirm }) => {
             ></button>
           </div>
           <div className="modal-body">
-            <p>Are you sure you want to delete this contact?</p>
+            <p>Are you sure you want to delete "{contact.fullName}"?</p>
           </div>
           <div className="modal-footer">
             <button
