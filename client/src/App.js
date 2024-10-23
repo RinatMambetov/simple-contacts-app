@@ -37,11 +37,9 @@ function App() {
   };
 
   const removeContact = (id) => {
-    if (window.confirm("Are you sure you want to delete this contact?")) {
-      const url = baseUrl + `contacts/${id}`;
-      axios.delete(url);
-      setData(data.filter((item) => item.id !== id));
-    }
+    const url = baseUrl + `contacts/${id}`;
+    axios.delete(url);
+    setData(data.filter((item) => item.id !== id));
   };
 
   return (
@@ -53,10 +51,6 @@ function App() {
         <div className="card-body">
           <TableView contacts={data} removeContact={removeContact} />
           <FormNewItem appendContact={appendContact} />
-          {/* <i
-            className="bi-alarm"
-            style={{ fontSize: "2rem", color: "cornflowerblue" }}
-          ></i> */}
         </div>
       </div>
     </div>
