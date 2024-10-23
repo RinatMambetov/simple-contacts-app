@@ -37,9 +37,11 @@ function App() {
   };
 
   const removeContact = (id) => {
-    const url = baseUrl + `contacts/${id}`;
-    axios.delete(url);
-    setData(data.filter((item) => item.id !== id));
+    if (window.confirm("Are you sure you want to delete this contact?")) {
+      const url = baseUrl + `contacts/${id}`;
+      axios.delete(url);
+      setData(data.filter((item) => item.id !== id));
+    }
   };
 
   return (
