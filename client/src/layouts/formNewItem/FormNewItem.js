@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-const FormNewItem = (props) => {
+const FormNewItem = ({ appendContact }) => {
   const [fullName, setFullName] = useState("");
   const [phoneNum, setPhoneNum] = useState("");
   const [note, setNote] = useState("");
 
   const submit = () => {
     if (fullName.trim() === "" || phoneNum.trim() === "") return;
-    props.appendContact(fullName, phoneNum, note);
+    appendContact(fullName, phoneNum, note);
     setFullName("");
     setPhoneNum("");
     setNote("");
