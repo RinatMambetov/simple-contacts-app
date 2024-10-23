@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const TableRowItem = ({ index, contact, onDelete }) => {
   return (
@@ -8,8 +8,8 @@ const TableRowItem = ({ index, contact, onDelete }) => {
       <td>{contact.phoneNum}</td>
       <td>{contact.note}</td>
       <td>
-        <a
-          className="icon-link icon-link-hover"
+        <button
+          className="btn btn-link"
           href="#"
           onClick={(e) => {
             e.preventDefault();
@@ -20,7 +20,7 @@ const TableRowItem = ({ index, contact, onDelete }) => {
             className="bi bi-trash "
             style={{ fontSize: "1.5rem", color: "red" }}
           ></i>
-        </a>
+        </button>
       </td>
     </tr>
   );

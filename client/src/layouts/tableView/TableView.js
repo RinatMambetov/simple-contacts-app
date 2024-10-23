@@ -16,7 +16,7 @@ const TableView = ({ contacts, removeContact }) => {
 
   return (
     <>
-      <table className="table">
+      <table className="table table-sm">
         <thead>
           <tr>
             <th scope="col">#</th>
