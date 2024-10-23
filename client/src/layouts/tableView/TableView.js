@@ -3,13 +3,14 @@ import TableRowItem from "./components/TableRowItem";
 
 const TableView = (props) => {
   return (
-    <table className="table table-hover">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">FullName</th>
-          <th scope="col">PhoneNum</th>
+          <th scope="col">Full Name</th>
+          <th scope="col">Phone Number</th>
           <th scope="col">Note</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>

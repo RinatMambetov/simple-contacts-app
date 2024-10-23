@@ -45,12 +45,16 @@ function App() {
   return (
     <div className="container mt-5 mb-5">
       <div className="card">
-        <div className="card-header">
-          <h1>List of contacts</h1>
+        <div className="card-header text-center">
+          <h1>Contacts</h1>
         </div>
         <div className="card-body">
           <TableView contacts={data} removeContact={removeContact} />
           <FormNewItem appendContact={appendContact} />
+          {/* <i
+            className="bi-alarm"
+            style={{ fontSize: "2rem", color: "cornflowerblue" }}
+          ></i> */}
         </div>
       </div>
     </div>
