@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql2
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data2:/var/lib/mysql
+    networks:
+      - app-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=contacts_app
+
+  springboot:
+    image: contacts-springboot-app2
+    container_name: contacts-springboot-app2
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+
+volumes:
+  mysql_data2:
+
+networks:
+  app-network:
