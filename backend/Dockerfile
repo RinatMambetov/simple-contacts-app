@@ -17,5 +17,4 @@ RUN chmod +x /usr/local/bin/wait-for-it
 EXPOSE 8080
 
 # Запускаем приложение
-#ENTRYPOINT ["java", "-jar", "app.jar"]
 ENTRYPOINT ["wait-for-it", "mysql:3306", "--timeout=30", "--", "java", "-jar", "app.jar"]

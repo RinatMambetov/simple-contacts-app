@@ -3,11 +3,11 @@ version: "3.8"
 services:
   mysql:
     image: mysql:latest
-    container_name: mysql2
+    container_name: mysql-container
     ports:
       - "3306:3306"
     volumes:
-      - mysql_data2:/var/lib/mysql
+      - contacts-mysql_data:/var/lib/mysql
     networks:
       - app-network
     environment:
@@ -15,8 +15,8 @@ services:
       - MYSQL_DATABASE=contacts_app
 
   springboot:
-    image: contacts-springboot-app2
-    container_name: contacts-springboot-app2
+    image: contacts-springboot-app
+    container_name: contacts-springboot-app-container
     ports:
       - "8080:8080"
     depends_on:
@@ -24,8 +24,18 @@ services:
     networks:
       - app-network
 
+  react:
+    image: contacts-react-app
+    container_name: contacts-react-app-container
+    ports:
+      - "80:80"
+    depends_on:
+      - springboot
+    networks:
+      - app-network
+
 volumes:
-  mysql_data2:
+  contacts-mysql_data:
 
 networks:
   app-network:
